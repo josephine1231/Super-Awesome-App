@@ -15,11 +15,17 @@ function create() {
 
     platforms = game.add.physicsGroup();
 
-    platforms.create(game.rnd.integerInRange(0, 500),y, 'platform');
-    platforms.create(game.rnd.integerInRange(0,500),y*2, 'platform');
-    platforms.create(game.rnd.integerInRange(0, 500),y*2+y, 'platform');
-    platforms.create(game.rnd.integerInRange(0, 500),y*4, 'platform');
-
+    platforms.create(game.rnd.integerInRange(0, 200),y, 'platform');
+    platforms.create(game.rnd.integerInRange(0,200),y*2, 'platform');
+    platforms.create(game.rnd.integerInRange(0, 200),y*2+y, 'platform');
+    platforms.create(game.rnd.integerInRange(0, 200),y*3, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(200, 400),y, 'platform');
+    platforms.create(game.rnd.integerInRange(200,400),y*2, 'platform');
+    platforms.create(game.rnd.integerInRange(200, 400),y*2+y, 'platform');
+    platforms.create(game.rnd.integerInRange(200, 400),y*3, 'platform');
+    
+    
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();

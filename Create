@@ -4,7 +4,7 @@ var cursors;
 var jumpButton;
 
 function create() {
-
+    game.world.setBounds(0, 0, 2000, 2000);
     player = game.add.sprite(100, 200, 'player');
 
     game.physics.arcade.enable(player);
@@ -21,11 +21,14 @@ function create() {
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();
+
+
     
     keyUp = game.input.keyboard.addKey(Phaser.Keyboard.W);
     keyDown = game.input.keyboard.addKey(Phaser.Keyboard.S);
     keyRight = game.input.keyboard.addKey(Phaser.Keyboard.D);
     keyLeft = game.input.keyboard.addKey(Phaser.Keyboard.A);
+
 
    
 }

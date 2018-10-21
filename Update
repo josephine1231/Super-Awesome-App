@@ -2,6 +2,7 @@
 function update () {
 
     game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.collide(friend1, platforms);
 
     
     
@@ -44,4 +45,6 @@ if (cursors.up.isDown)
 
     }
 }
+
+
 

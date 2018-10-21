@@ -21,6 +21,11 @@ function create() {
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();
-    jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    
+    keyUp = game.input.keyboard.addKey(Phaser.Keyboard.W);
+    keyDown = game.input.keyboard.addKey(Phaser.Keyboard.S);
+    keyRight = game.input.keyboard.addKey(Phaser.Keyboard.D);
+    keyLeft = game.input.keyboard.addKey(Phaser.Keyboard.A);
 
+   
 }

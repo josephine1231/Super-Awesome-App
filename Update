@@ -4,6 +4,8 @@ function update () {
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.collide(player, slime);
     game.physics.arcade.collide(slime, player);
+    
+    
 
     player.body.velocity.x = 0;
 
@@ -40,7 +42,12 @@ if (cursors.up.isDown)
     {
         game.camera.x += 20;
     }
-    
+if (fireButton.isDown)
+    {
+        fireBullet();
+    }
+
+
 
     
 }

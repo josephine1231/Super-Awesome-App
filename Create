@@ -2,9 +2,10 @@ var player;
 var platforms;
 var cursors;
 var jumpButton;
+y = 150;
 
 function create() {
-    game.world.setBounds(0, 0, 2000, 2000);
+    game.world.setBounds(0, 0, 2000, 800);
     player = game.add.sprite(100, 200, 'player');
 
     game.physics.arcade.enable(player);
@@ -14,15 +15,16 @@ function create() {
 
     platforms = game.add.physicsGroup();
 
-    platforms.create(500, 150, 'platform');
-    platforms.create(-200, 300, 'platform');
-    platforms.create(400, 450, 'platform');
+    platforms.create(game.rnd.integerInRange(0, 500),y, 'platform');
+    platforms.create(game.rnd.integerInRange(0,500),y*2, 'platform');
+    platforms.create(game.rnd.integerInRange(0, 500),y*2+y, 'platform');
+    platforms.create(game.rnd.integerInRange(0, 500),y*4, 'platform');
 
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();
 
-
+   
     
     keyUp = game.input.keyboard.addKey(Phaser.Keyboard.W);
     keyDown = game.input.keyboard.addKey(Phaser.Keyboard.S);

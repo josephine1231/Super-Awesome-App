@@ -9,7 +9,7 @@ function preload() {
     
     game.load.image('player', 'sprites/aqua_ball.png');
     game.load.image('platform', 'sprites/snowflakes.png');
-    
+    game.load.image('friend1', 'sprites/green_ball.png');
     
 
 }

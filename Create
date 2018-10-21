@@ -5,7 +5,7 @@ var jumpButton;
 y = 150;
 
 function create() {
-    game.world.setBounds(0, 0, 2000, 800);
+    game.world.setBounds(0, 0, 2000, 1600);
     player = game.add.sprite(100, 200, 'player');
     
     game.physics.arcade.enable(player);
@@ -66,17 +66,101 @@ function create() {
     platforms.create(game.rnd.integerInRange(1800, 1900),y*4, 'platform');
     
     
+    //middle bar
+    
+     platforms.create(game.rnd.integerInRange(-50, 200),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(150, 400),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(350, 600),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(550, 800),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(850, 1000),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(1050, 1250),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(1200, 1400),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(1450, 1600),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(1650, 1800),y+600, 'platform');
+
+    
+    platforms.create(game.rnd.integerInRange(1800, 1980),y+600, 'platform');
+    
+
+    //bottom bar
+    platforms.create(game.rnd.integerInRange(-50, 200),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(-50,250),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(-50, 200),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(-50, 250),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(150, 400),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(200,400),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(150, 400),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(200, 400),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(350, 600),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(400, 600),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(400, 600),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(300, 600),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(550, 800),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(600, 850),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(550, 800),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(600, 800),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(850, 1000),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(800, 1050),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(800, 1050),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(850, 1050),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(1050, 1250),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1050, 1250),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1000, 1250),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1000, 1250),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(1200, 1400),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1200, 1450),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1250, 1450),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1200, 1400),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(1450, 1600),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1450, 1650),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1400, 1600),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1400, 1650),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(1650, 1800),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1600, 1800),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1600, 1800),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1650, 1800),y*4+800, 'platform');
+    
+    platforms.create(game.rnd.integerInRange(1800, 1980),y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1800, 1900),y*2+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1800, 1980),y*2+y+800, 'platform');
+    platforms.create(game.rnd.integerInRange(1800, 1900),y*4+800, 'platform');
+    
+    
+    
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();
-
    
     
     keyUp = game.input.keyboard.addKey(Phaser.Keyboard.W);
     keyDown = game.input.keyboard.addKey(Phaser.Keyboard.S);
     keyRight = game.input.keyboard.addKey(Phaser.Keyboard.D);
     keyLeft = game.input.keyboard.addKey(Phaser.Keyboard.A);
-
+    
 
    
 }

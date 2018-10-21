@@ -2,6 +2,8 @@
 function update () {
 
     game.physics.arcade.collide(player, platforms);
+    game.physics.arcade.collide(player, slime);
+    game.physics.arcade.collide(slime, player);
 
     player.body.velocity.x = 0;
 
@@ -15,11 +17,11 @@ function update () {
     }
         if (keyUp.isDown)
     {
-        player.body.y -= 20;
+        player.body.y -= 10;
     }
     else if (keyDown.isDown)
     {
-        player.body.y += 20;
+        player.body.y += 10;
     }
 if (cursors.up.isDown)
     {

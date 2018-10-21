@@ -1,12 +1,16 @@
 function preload() {
 
-    game.stage.backgroundColor = '#85b5e1';
+    game.stage.backgroundColor = '#70aaf5';
+    
+     
 
     game.load.baseURL = 'http://examples.phaser.io/assets/';
     game.load.crossOrigin = 'anonymous';
 
     game.load.image('player', 'sprites/aqua_ball.png');
     game.load.image('platform', 'sprites/snowflakes.png');
+    game.load.image('slime', 'sprites/slime.png');
+    
     
 
 }

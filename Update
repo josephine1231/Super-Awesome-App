@@ -41,4 +41,46 @@ if (cursors.up.isDown)
     
 
     
+}function update () {
+
+    game.physics.arcade.collide(player, platforms);
+
+    player.body.velocity.x = 0;
+
+    if (keyLeft.isDown)
+    {
+        player.body.velocity.x = -250;
+    }
+    else if (keyRight.isDown)
+    {
+        player.body.velocity.x = 250;
+    }
+        if (keyUp.isDown)
+    {
+        player.body.y -= 20;
+    }
+    else if (keyDown.isDown)
+    {
+        player.body.y += 20;
+    }
+if (cursors.up.isDown)
+    {
+        game.camera.y -= 20;
+    }
+    else if (cursors.down.isDown)
+    {
+        game.camera.y += 20;
+    }
+
+    if (cursors.left.isDown)
+    {
+        game.camera.x -= 20;
+    }
+    else if (cursors.right.isDown)
+    {
+        game.camera.x += 20;
+    }
+    
+
+    
 }

@@ -8,14 +8,9 @@ y = 150;
 function create() {
     game.world.setBounds(0, 0, 2000, 800);
     player = game.add.sprite(100, 200, 'player');
-    slime = game.add.sprite(100,100, 'slime');
-
+    
     game.physics.arcade.enable(player);
-    game.physics.arcade.enable(slime);
     
-    
-    slime.body.collideWorldBounds = true;
-    slime.body.gravity.y = 500;
     player.body.collideWorldBounds = true;
     player.body.gravity.y = 500;
 
@@ -85,4 +80,76 @@ function create() {
 
 
    
+}
+
+function fireBullet () {
+
+    if (game.time.now > bulletTime)
+    {
+        //  Grab the first bullet we can from the pool
+        lazer = lazers.getFirstDead(true, player.x + 24 * player.scale.x, player.y + 8, 'lazer');
+
+        lazer.animations.add('fire', frames, 60);
+        lazer.animations.frameName = 'frame02';
+
+        lazer.scale.x = player.scale.x;
+
+        if (lazer.scale.x === 1)
+        {
+            // lazer.anchor.x = 1;
+        }
+        else
+        {
+            // lazer.anchor.x = 0;
+        }
+
+        //  Lazers start out with a width of 96 and expand over time
+        // lazer.crop(new Phaser.Rectangle(244-96, 0, 96, 2), true);
+
+        bulletTime = game.time.now + 250;
+    }
+
+}
+
+function updateBullets (lazer) {
+
+    // if (game.time.now > frameTime)
+    // {
+    //     frameTime = game.time.now + 500;
+    // }
+    // else
+    // {
+    //     return;
+    // }
+
+    //  Adjust for camera scrolling
+    var camDelta = game.camera.x - prevCamX;
+    lazer.x += camDelta;
+
+    if (lazer.animations.frameName !== 'frame30')
+    {
+        lazer.animations.next();
+    }
+    else
+    {
+        if (lazer.scale.x === 1)
+        {
+            lazer.x += 16;
+
+            if (lazer.x > (game.camera.view.right - 224))
+            {
+                lazer.kill();
+            }
+        }
+        else
+        {
+            lazer.x -= 16;
+
+            if (lazer.x < (game.camera.view.left - 224))
+            {
+                lazer.kill();
+            }
+        }
+    }
+
 }

@@ -2,16 +2,21 @@ var player;
 var platforms;
 var cursors;
 var jumpButton;
+var friend1;
 y = 150;
 
 function create() {
     game.world.setBounds(0, 0, 2000, 1600);
     player = game.add.sprite(100, 200, 'player');
+    friend1 =game.add.sprite(1900,1500,'friend1');
     
+    game.physics.arcade.enable(friend1);
     game.physics.arcade.enable(player);
     
     player.body.collideWorldBounds = true;
     player.body.gravity.y = 500;
+    friend1.body.collideWorldBounds= true;
+    friend1.body.gravity.y = 500;
 
     platforms = game.add.physicsGroup();
 

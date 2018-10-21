@@ -1,4 +1,5 @@
 var player;
+var player;
 var platforms;
 var cursors;
 var jumpButton;
@@ -15,15 +16,15 @@ function create() {
 
     platforms = game.add.physicsGroup();
 
-    platforms.create(game.rnd.integerInRange(0, 200),y, 'platform');
-    platforms.create(game.rnd.integerInRange(0,200),y*2, 'platform');
-    platforms.create(game.rnd.integerInRange(0, 200),y*2+y, 'platform');
-    platforms.create(game.rnd.integerInRange(0, 200),y*3, 'platform');
+    platforms.create(game.rnd.integerInRange(-50, 200),y, 'platform');
+    platforms.create(game.rnd.integerInRange(-50,250),y*2, 'platform');
+    platforms.create(game.rnd.integerInRange(-50, 200),y*2+y, 'platform');
+    platforms.create(game.rnd.integerInRange(-50, 250),y*3+y, 'platform');
     
-    platforms.create(game.rnd.integerInRange(200, 400),y, 'platform');
+    platforms.create(game.rnd.integerInRange(150, 400),y, 'platform');
     platforms.create(game.rnd.integerInRange(200,400),y*2, 'platform');
-    platforms.create(game.rnd.integerInRange(200, 400),y*2+y, 'platform');
-    platforms.create(game.rnd.integerInRange(200, 400),y*3, 'platform');
+    platforms.create(game.rnd.integerInRange(150, 400),y*2+y, 'platform');
+    platforms.create(game.rnd.integerInRange(200, 400),y*3+y, 'platform');
     
     
     platforms.setAll('body.immovable', true);
